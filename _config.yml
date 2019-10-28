@@ -14,6 +14,15 @@ description: Mian's Blog
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/MQ_LOGO.jpg
 
+# --- Navigation bar options --- #
+
+# List of links in the navigation bar
+navbar-links:
+  Home: ""
+  Index: "CloudCategories"
+  Search: "search"
+  About Me: "about"
+
 #
 # Flags below are optional
 #
@@ -26,7 +35,7 @@ footer-links:
   flickr:
   github: celery1124
   instagram:
-  linkedin: celery1124 
+  linkedin: mianqin
   pinterest:
   rss: rss
   twitter: 
