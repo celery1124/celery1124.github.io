@@ -2,6 +2,7 @@
 layout: post
 title: A Debugging Experience on Cortex-A57
 categories: Debug
+tags: [cortex-a57, fpga, cache coherence]
 ---
 
 I want to keep record of a debugging experience for cache coherence problem on the ARM cortex-A57 platform for future reference.  We had a project for hardware-based memory management for hybrid memory systems (fast expensive DRAM + slow but cheap NVM).  The hardware platform we are using is an EMC customized board with an 8 core ARM A57 connected with FPGA controlled DIMMs through PCIe bus as shown in Figure 1.  The memory management logic is implemented in FPGA.  The ARM chip serves as host to run applications.  We assume in the future, the processor will have extra logic along with the memory controller for DRAM and NVM to implement some page/sub-page movement policy between DRAM and NVM.

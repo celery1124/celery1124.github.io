@@ -45,7 +45,7 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.7;
   margin: 1em 0 15px;
   padding: 0;
-  text-align: center;
+  text-align: left;
 
   @include mobile {
     line-height: 1.4;
@@ -63,17 +63,17 @@ h2 {
   font-size: 24px;
 }
 
-@media (min-width: 769px){
-	.post h2::before, .post h2::after {
-	    content: "";
-	    display: inline-block;
-	    vertical-align: middle;
-	    width: 46px;
-	    height: 1px;
-	    background: rgb(192, 211, 218);
-	    margin: 0px 30px;
-	}
-}
+//@media (min-width: 769px){
+//	.post h2::before, .post h2::after {
+//	    content: "";
+//	    display: inline-block;
+//	    vertical-align: middle;
+//	    width: 46px;
+//	    height: 1px;
+//	    background: rgb(192, 211, 218);
+//	    margin: 0px 30px;
+//	}
+//}
 
 h3 {
   font-size: 20px;
@@ -432,7 +432,7 @@ body:after {
 
 .post h1{
   font-family: 'FuturaPTLight';
-  text-align: center;
+  text-align: left;
   font-weight: bold;
   font-kerning: auto;
   font-feature-settings: "kern","liga","dlig","hlig","cswh";
