@@ -180,3 +180,6 @@ I modify the Makefile a little bit to add the KVSSD library header. (not pretty)
 ```shell
 make EXTLIBS="-lkvapi -L./kvssd" #./kvssd includes the libkvapi.so
 ```
+
+## FIO manual
+[FIO mannual](https://fio.readthedocs.io/en/latest/fio_man.html)
