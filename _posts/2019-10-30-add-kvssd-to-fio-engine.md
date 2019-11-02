@@ -183,3 +183,4 @@ make EXTLIBS="-lkvapi -L./kvssd" #./kvssd includes the libkvapi.so
 
 ## FIO manual
 [FIO mannual](https://fio.readthedocs.io/en/latest/fio_man.html)
+[Cloud latency measurement problem](https://www.cronburg.com/fio/cloud-latency-problem-measurement/)
