@@ -64,6 +64,7 @@ class_name ( class_name && ) = delete;	(3)	(since C++11)
 ```
 
 - move assignment
+
 ```c++
 class_name & class_name :: operator= ( class_name && )	(1)	(since C++11)
 class_name & class_name :: operator= ( class_name && ) = default;	(2)	(since C++11)
