@@ -39,30 +39,33 @@ The concept of copy and move are pretty straight forward, depends on whether the
 
 Note: whether the constructor or the assignment is called can be understood by the function argument.  I kind of ambigere the consturctor and assignment above, but only show the concept of copy in the code.
 - copy constructor
+
 ```c++
 class_name ( const class_name & )	(1)	
 class_name ( const class_name & ) = default;	(2)	
 class_name ( const class_name & ) = delete;	(3)	
-
 ```
+
 - copy assignment
+
 ```c++
 class_name & class_name :: operator= ( class_name )	(1)	
 class_name & class_name :: operator= ( const class_name & )	(2)	
 class_name & class_name :: operator= ( const class_name & ) = default;	(3)	(since C++11)
 class_name & class_name :: operator= ( const class_name & ) = delete;	(4)	(since C++11)
 ```
+
 - move constructor
+
 ``` c++
 class_name ( class_name && )	(1)	(since C++11)
 class_name ( class_name && ) = default;	(2)	(since C++11)
 class_name ( class_name && ) = delete;	(3)	(since C++11)
-
 ```
+
 - move assignment
 ```c++
 class_name & class_name :: operator= ( class_name && )	(1)	(since C++11)
 class_name & class_name :: operator= ( class_name && ) = default;	(2)	(since C++11)
 class_name & class_name :: operator= ( class_name && ) = delete;	(3)	(since C++11)
-
 ```
