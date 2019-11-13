@@ -16,6 +16,7 @@ I was resposible for the host side, i.e. mapping the application memory allocate
 
 # Software code path
 
+
 # Problem Description
 The problem looks like this.  The applications (SPEC 2006) some times can finish successfully, some times fails with error, some times produce the incorrent results.  Another special phenomenon is after the full power cycle of the system, the first application has a higher correct rate.  Based on this, we decided to do an in-depth debugging which also includes the software path.
 
