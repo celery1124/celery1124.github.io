@@ -71,7 +71,10 @@ The commands for booting an aarch64 kernel is as follows:
 This [article](https://wiki.qemu.org/Documentation/9psetup) documents how to setup and mount shared folder in guest in qemu.
 
 ### Other useful references
-https://github.com/google/syzkaller/blob/master/docs/linux/setup_linux-host_qemu-vm_arm64-kernel.md
-https://www.bennee.com/~alex/blog/2014/05/09/running-linux-in-qemus-aarch64-system-emulation-mode/
-https://blukat29.github.io/2017/12/cross-compile-arm-kernel-module/
-https://zhuanlan.zhihu.com/p/53325393
+[https://github.com/google/syzkaller/blob/master/docs/linux/setup_linux-host_qemu-vm_arm64-kernel.md](https://github.com/google/syzkaller/blob/master/docs/linux/setup_linux-host_qemu-vm_arm64-kernel.md)
+
+[https://www.bennee.com/~alex/blog/2014/05/09/running-linux-in-qemus-aarch64-system-emulation-mode/](https://www.bennee.com/~alex/blog/2014/05/09/running-linux-in-qemus-aarch64-system-emulation-mode/)
+
+[https://blukat29.github.io/2017/12/cross-compile-arm-kernel-module/](https://blukat29.github.io/2017/12/cross-compile-arm-kernel-module/)
+
+[https://zhuanlan.zhihu.com/p/53325393](https://zhuanlan.zhihu.com/p/53325393)
