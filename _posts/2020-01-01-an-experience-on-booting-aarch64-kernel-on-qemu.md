@@ -6,6 +6,7 @@ tags: [qemu, kvm, kernel, aarch64, arm]
 ---
 
 ## In the front
+
 This blog talks about an experience on booting aarch64 kernel on qemu/kvm.  The initial purpose for doing this is to setting up an environment to debugging the kernel with an external debugger.  However, during setting up qemu booting, I ran into some issues that worth logging here.
 
 The basic requirements for booting a simple kernel on qemu contains three parts.  1, emulation/virtualization tool, i.e. qemu.  2, linux kernel cross compiled for aarch64 (armV8).  3, root filesystem for utilities and programs after booting the kernel. (providing a simple shell and fs).
@@ -13,6 +14,7 @@ The basic requirements for booting a simple kernel on qemu contains three parts.
 The problem I met turns out to be a version issue for tools used by those three parts.  At first, I used the qemu and cross-compiler from the OS distribution (Ubuntu 16.04).  However, after the kernel is built and booting on qemu, it has no response (whether there is graphic enabled or not, no booting message at all).  I thought this might be an issue for the cross compiler and I tried to compile a cross-compiler with the latest version (which is a pain).  However, the problem turns to be the qemu version too old.  I'll show the references and run scripts for each step in the following sections.
 
 ## 1, Cross-compiler for aarch64
+
 Building the gcc is non-trival, especially for the cross-compiler.  I'll not show detailed steps, here is an [article](https://preshing.com/20141119/how-to-build-a-gcc-cross-compiler/) that basically covered everything.
 
 Noted except for gcc compiler, there's another important package which is binutil which contains the linker and loader for aarch64 which also needs to be cross compiled separately.  If you need the full toolchains to cross-compile (like a user program), you also need the proper c/c++ library (glibc) to be cross compiled.
@@ -21,19 +23,26 @@ Noted except for gcc compiler, there's another important package which is binuti
 Building the kernel is trival and personally I've done this many times for different targets.  For aarch64 there are few notes to mention.
 
 1. the easiset way to config is using the defconfig as follows.
+
 ```shell
 ARCH=arm64 make defconfig
 ```
-2. to add an external initramfs, complete the configuration line: (buildroot will be explained in section 3)
+
+2. to add an external initramfs, complete the configuration line: (buildroot will be explained in 
+section 3)
+
 ```shell
 CONFIG_INITRAMFS_SOURCE="/your/path/buildroot-2019.08.3/output/images/rootfs.cpio"
 ```
+
 3. build command (depends on which cross-compiler you are using)
+
 ```shell
 ARCH=arm64 CROSS_COMPILE=/opt/cross/bin/aarch64-linux- make -j16
 ```
 
 ## 3, Buildroot
+
 Buildroot is a useful tool for building small root file system image.  It supports multiple image format and utilities.  Below are some useful configurations.
 ```shell
 * Target Options -> Target Architecture(AArch64)
