@@ -64,9 +64,30 @@ end if
 
 The innovation of this paper is using signature based method to better predict re-use distance with the cache hit/miss actions with low hardware cost which influence later works like SPP.  However, it's not able to predict the re-use distance quantitatively due to the fact that the counter only capture the hit but not the distance of the hit.
 
+## Pseudo LRU 
+
+Fit cache level: LLC
+
+Pseudo LRU is the same class of replacement policy as LRU.  However, it focuses on reducing the hardware complexity which maybe useful on low-cost/low-power systems. Or it's more of an **practical** implementation policy.  In a nutshell, [PseudoLRU][PseudoLRU paper] use a complete binary tree to represent the recency stack (each tree node consumes single bit which is referred to plru bit).  In contrast, for a true LRU policy you need k*log(k) bits to represent the recency stack.  Besides, in PseudoLRU insertion (promotion) it only needs to update log(k) bits compared to k*log(k) bits for true LRU.
+
+## Dynamic set sampling for LLC
+
+Fit cache level: LLC
+
+Another important technique for LLC replacement policy is sampling.  [Dynamic set sampling][dynamic set sampling] samples a few dedicated sets to assess the efficacy of the desired policy.  Lots of adaptive(dynamic) policies which works like a tournament fashion which require a global view of how the hit ratio looks like can employ this approach to reduce the hardware overhead. (No need to implement on all tags).
+
+[Sampling Dead Block Prediction][SDBP] is a perfect use case for set sampling.  The idea of SDBP is to predict dead blocks in LLC (in the paper it shows that 86% of the LLC can be dead over time).  Unlike other reference trace based predictor, SDBP only need 1.6% of the LLC access to give a pretty decent accuracy since it only sample a few numbers of sets.  Yet another practical implementation for low-power systems.
+
+
 <!-- Reference -->
 [Back to the Future: Leveraging Belady’s Algorithm for Improved Cache Replacement]: https://www.cs.utexas.edu/~lin/papers/isca16.pdf
 
 [RRIP paper]:https://people.csail.mit.edu/emer/papers/2010.06.isca.rrip.pdf
 
 [SHiP paper]:https://mrmgroup.cs.princeton.edu/papers/MICRO11_SHiP_Wu_Final.pdf
+
+[PseudoLRU paper]:https://dl.acm.org/doi/10.1145/2540708.2540733
+
+[dynamic set sampling]:https://ieeexplore.ieee.org/document/1635950
+
+[SDBP]:https://dl.acm.org/doi/10.1109/MICRO.2010.24
