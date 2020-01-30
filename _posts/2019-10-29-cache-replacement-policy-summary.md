@@ -11,7 +11,7 @@ In this blog, I will summarize some non-trivial famous cache replacement policie
 
 # Policies
 
-In this section, we categroize based on the policy names.
+In this section, we categorize based on the policy names.
 
 ## Belady's algorithm
 
@@ -78,6 +78,14 @@ Another important technique for LLC replacement policy is sampling.  [Dynamic se
 
 [Sampling Dead Block Prediction][SDBP] is a perfect use case for set sampling.  The idea of SDBP is to predict dead blocks in LLC (in the paper it shows that 86% of the LLC can be dead over time).  Unlike other reference trace based predictor, SDBP only need 1.6% of the LLC access to give a pretty decent accuracy since it only sample a few numbers of sets.  Yet another practical implementation for low-power systems.
 
+## Perceptron Learning for Reuse Prediction
+
+Fit cache level: LLC
+
+Hash Perceptron is yet another predictor for re-use distance prediction.  This [work][perceptron reuse prediction] comparing with SHiP and SDBP and prove to have better prediction accuracy as well as lower false positive rate.  The predictor predict re-use distance for last level cache for further insertion placement, promotion and bypass decisions. (in the future [MPPPB][Multiperspective Placement, Promotion, and Bypass] paper, the set 4 thresholds for bypassing, different LRU position placement when miss and potential promotion for hit)
+
+The main idea of Hash Perceptron is to use multiple features (such as consecutive PCs, partial memory address, etc.) to index individual tables with saturate counters to perform the training and prediction dynamically.  The idea is not fresh new and has been already employed in branch prediction and prefetch filter in the future.
+
 
 <!-- Reference -->
 [Back to the Future: Leveraging Belady’s Algorithm for Improved Cache Replacement]: https://www.cs.utexas.edu/~lin/papers/isca16.pdf
@@ -91,3 +99,7 @@ Another important technique for LLC replacement policy is sampling.  [Dynamic se
 [dynamic set sampling]:https://ieeexplore.ieee.org/document/1635950
 
 [SDBP]:https://dl.acm.org/doi/10.1109/MICRO.2010.24
+
+[perceptron reuse prediction]:https://dl.acm.org/doi/10.5555/3195638.3195641
+
+[Multiperspective Placement, Promotion, and Bypass]:https://dl.acm.org/doi/abs/10.1145/3123939.3123942
