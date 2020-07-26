@@ -14,7 +14,7 @@ In this blog, I will summarize some non-trivial famous cache prefetch techniques
 
 ## Fundamentals metrics
 
-There are some basic metrics that measure how good a prefetcher is. **Prefectch Coverage** represents the fraction of total misses that are eliminated by the prefetcher.  **Prefetch Accuracy** is the fraction of total prefetches that were useful.
+There are some basic metrics that measure how good a prefetcher is. **Prefectch Coverage** represents the fraction of total misses that are eliminated by the prefetcher.  **Prefetch Accuracy** is the fraction of total prefetches that were useful. **Prefetch degree** stands for how much prefetch requests issues (or refered as streams) when prefetch is triggered.  Higher degrees yeilds higher bandwidth utilization and potential more capacity miss if accuracy/timeness is not guaranteed.
 
 # Policies
 
@@ -54,17 +54,27 @@ In the paper, the author also breifly discuss about the prefetch throttling by a
 
 ## SMS
 
-Fit cache level: L1/L2 DCache (prefetch from LLC)
+Fit cache level: L1/L2 DCache
 
 [Spatial Memory Streaming][SMS] is a prefetcher designed to exploit sptial correlations of a program.  Some typical workloads is database related workload which usually have a fixed memory layout for a memory region (say a page).  The memory access will also follow such spatial correlation.  For example, read some metadata, then read index, then access some frequently access tuples.  SMS records those spatial correlation by an Active Generation Table (AGT) tagged by some high bits of memory address.  The table also record PC information for future prediction use.  After training the AGT table will get some access pattern (bit vector) associated with a Tag that is combined with PC and some memory address bits.  This tag can be used to perform future prediction on cache access.
 
 The paper heavily discussed about the evaulation part of how workloads contain those spatial correlation of memory access and how to quantitatively analyze and expolit from those. 
 
+## B-Fetch
+
+Fit cache level: L1 DCache
+
+[Branch Prediction Directed Prefetching][b-fetch] is a prefetcher that use branch prediction hints to guide prefetch.  The motivation is by leveraging the branch predictor in the front end pipeline, we are able to get the following load addresses (static ones) in the target basic blocks.  It sounds like straigtforward.  However, it requires tighly coupling with front end pipeline (branch prediction, register state, BTB, etc.).  The advantage is that it can easily increase prefetch depth with controled accuracy.(branch predictor can provide confidence information for the program path and a chain of basic blocks can be index with a history copy of register states).
+
+**Personally, I don't think this is the right direction for data prefetching.  Although front-end provide more information of the program contexts, however, due to the high implementation and timing requirements, the hardware is difficult to implement and prove to be useful.  Besides, lower levels of the memory hierarchy are less associated with program contexts.  Thus, those prefetcher cannot be used in lower level caches.  The memory wall is usually bounded by lower level caches (LLC, DRAM).  So, I think the future data prefetcher should focus on pure spatial or temperal address correlations without any front end information.**
+
 ## SPP
 
 Fit cache level: L2
 
+[SPP][spp] is proposed by [Jinchun Kim][Jinchun] in our lab.  The design of SPP aims at increase of prefetch accuracy by recording more complex access patterns and the ability to prefetch more degrees.  SPP introduces a signature table (ST) to record the access pattern within a page.  It does some bit manipulation to compress most recent 3 access offset (with some possible aliasing) and form a signature.  Then, there is a global pattern table (PT) to record all possible signatures and the following offsets associated with that signature.  This PT is important in two sense.  First, different offset related to a signature can guide for prefetch path (which next offset is most likely going to happen).  Second, the PT can be recursively indexed like chasing pointers by forming new signatures to increase prefetch degrees.
 
+SPP also includes a prefetch filter to remove redundant requests.  There is another follow-up paper regarding the prefetch filter by our lab called [Perceptron-Based Prefetch Filtering][Prefetch Filtering]
 
 # Temperal prefetcher
 
@@ -91,3 +101,11 @@ Fit cache level: L2
 [Best-Offset Hardware Prefetching]:https://hal.inria.fr/hal-01254863/document
 
 [SMS]:https://web.eecs.umich.edu/~twenisch/papers/isca06.pdf
+
+[b-fetch]:https://dl.acm.org/doi/10.1109/MICRO.2014.29
+
+[spp]:https://dl.acm.org/doi/10.5555/3195638.3195711
+
+[Jinchun]:https://sites.google.com/view/jinchun
+
+[Prefetch Filtering]:https://dl.acm.org/doi/10.1145/3307650.3322207
