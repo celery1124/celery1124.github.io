@@ -45,3 +45,7 @@ Snoop hit on a read.  Dirty write back and other core read the updated copy and 
 
 9. **M**odified to **I**nvalid.  
 Snoop hit on a write.  Dirty write back and other core read the update copy and transfer from invalid to modified. 
+
+## Snoopy vs Directory
+
+As discussed above, snoop with a common bus connected with all the cores (not many) and the LLC is a typical method to implement coherence protocol.  For example, lots of ARM architectures use this snoopy based coherence implementation.  However, if the scale of core numbers pass a certain threshold, we may not be able to build a efficient common bus.  Thus, directory based method is proposed with a better scalability.  The basic idea of directory based method is a client sever model.  The server (directory) hold some ground truth of the coherence metadata (such as which cores are hold the block, what are the states of those block).  The client (cores) needs to consult the server first on a read/write miss and the server may coordinate efficient actions for the clients such as invalidate block from other cores with shared state (get rid of broadcasting), client to client forwarding, etc.  You can design more sophisticated and efficient actions based on the interconnect.  However, the caveat is the management of directory (especially on hardware).   
