@@ -55,4 +55,14 @@ Retirement register file or architecture reigster file (backend RAT) is updated 
 
 As you can see, in the rename RAT, resevation station, ROB and retirement RAT, there are all value fields which basically store the redundant register value.  So, in modern CPUs (like Pentium 4), there is a unified storage for register file (with many read/write ports for performance reasons) called physical register file.  The PRF entry index can be the tag for all those structures as the pointer of the PRF. (reservation station may need a destination tag field for where to write desitnation register value).
 
+## Load/Store
+
+Load/store is a difficult part for out-of-order execution.  The main problem is that memory access has dynamic latency (due to the cache hierarchy) and the address calculation latency may differ for a young load and an old store.  Basically there are pessimistic and optimistic ways to handle load/store.
+
+The pessimistic way is to process load and store in order.  This will avoid any alias and disambiguation.  However, it will greatly degrade the performance.
+
+If we think about it, there is little chance that a older store and a newer load collides on the same address during execution.  So, an optimistic way is to always issue loads no matter the older stores have been resolved.  For each store, after the address is calculated, check back in the reorder buffer to see if there are address collision with newer loads and flush pipeline if needed (we can apply some speculation for).
+
+Optimizations includes bypassing and forwarding which requires seperate load/store queue.  This is also important structures in the OOO processor.  Load bypassing basically check the store queue for older stores for address collision.  If no collision found (consider the address is resolved), the load can be safely issued.  Load forwarding is directly get the value from the store queue if address match on the previous latest stores.
+
 [Organization of a superscalar processor]:ftp://ftp.cs.wisc.edu/sohi/papers/1995/ieee-proc.superscalar.pdf
