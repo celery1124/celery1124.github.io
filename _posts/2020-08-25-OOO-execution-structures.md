@@ -9,7 +9,7 @@ tags: [out of order execution, superscalar, OOO, RAT, reorder buffer, Tomasulo]
 
 In this post, I want to review the important architecture structures related to modern out-of-order execution machine (Tomasulo's algorithm).  Let's consider a simple RISC pipeline which consists of **fetch**, **decode and register file read**, **execute**, **write back (to register file)**, **retire** five stages.  Below demonstrates the orgnization of a out-of-order (superscalar) machine.  The important structures are register rename table (or register alias table RAT), reservation stations, reorder buffer.
 
-|![Organization of a superscalar processor](/post_imgs/superscalar.png){:class="img-responsive"}|
+|![Organization of a superscalar processor](/post_imgs/superscalar.jpg){:class="img-responsive"}|
 |:--:|
 | **Figure 1 Organization of a superscalar processor[[1]][Organization of a superscalar processor]** |
 
