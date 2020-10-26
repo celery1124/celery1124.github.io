@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Architecture and software support for synchronization
-categories: Operating system
+categories: Operating-system
 tags: [architecture, operating system, synchronization, concurrency, atomic instructions]
 ---
 
