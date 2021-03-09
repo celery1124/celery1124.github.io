@@ -19,6 +19,10 @@ Fit cache level: LLC
 
 Belady's replacement algorithm is also known as optimal replacement policy.  The Belady's algorithm is also referred in the operating system page replacement domain.  It needs the future access information to find the replace victim (the largest re-use distance). In Lin's [Hawkeye][Back to the Future: Leveraging Belady’s Algorithm for Improved Cache Replacement] paper, they leverage the history information to implement belady's algorithm.
 
+## Adaptive insertion policy
+
+Fit cache level: L2/LLC
+
 ## RRIP (Re-Reference Interval Prediction)
 
 Fit cache level: LLC
