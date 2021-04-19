@@ -13,6 +13,6 @@ My research interest is SW/HW co-design and implementation of computer system wi
 My previous work centers on design and implementation of high-speed data acquisition and broadband signal processing systems. Please see more details on the [project](https://sites.google.com/view/mian-qin/projects?authuser=0) page of my [website](https://www.celery1124.com).
 
 ## Contact
-celery1124@tamu.edu
+celery1124 **at** tamu **dot** edu
 
-morrisqin@gmail.com
+morrisqin **at** gmail **dot** com
