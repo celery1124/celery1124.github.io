@@ -288,7 +288,7 @@ p > img {
   margin: 0;
   color: $darkGray;
   cursor: pointer;
-  font-family: $base-font-family;
+  font-family: $times;
   font-weight: 300;
   font-size: 28px;
   letter-spacing: 1px;
@@ -307,7 +307,7 @@ p > img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $base-font-family;
+  font-family: $times;
   font-size: 18px;
 
   @include mobile {
