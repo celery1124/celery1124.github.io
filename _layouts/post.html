@@ -25,6 +25,9 @@ layout: default
     
   <div class="entry">
     {{ content }}
+    {% if page.comments == true %}
+      {% include comments.html %}
+    {% endif %}
   </div>
 
   <div>
