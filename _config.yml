@@ -121,10 +121,10 @@ staticman_url: https://github-io-comments.herokuapp.com/v2/entry/celery1124/cele
 # reCaptcha configuration info: the exact same site key and *encrypted* secret that you used in staticman.yml
 # I personally don't think the secret needs to be included in the generated site, but the staticman API bridge uses
 # it to ensure the site configuration and bridge configuration match (but why not just compare the site key?)
-#  reCaptcha:
-#     enabled: false
-#     siteKey: 6Le2eIMbAAAAADoV9HDpR31i8ZwInZoEb_91vEag
-#     secret: B1rCM9UqEhUq9QMzvqr5GSs06+MVHuAsV36XvCVpqX+xpjymlJIoHsr+ShDDxCqY8h77JvHFNpAuVH/BDwpsWhYh6Gjb1k+T82u6DhRavQmKKbOBkWqFRBu0tFbAwo1pGjndO1aTt/QigDlnkAK8e2XpGSH5357tE5ng302ETwA5iy25GCL00QW5ffOADpkQSjWBAPk1mu5M5rzcqeFYgpS+QHd3prAxOnnfTCJobSBxsI0RDJ37Cm8I9WK9rAEb0pxUYFYSvXiNiQpAuyHCM7PUt3sMANhgUzRTU8bSiWsxzuiFpvicGLRq/kPuzfyrd3ZMSxZzVpliILkfa3dXaEkqRHPmE4EpeifFB1a2SzPUchGlNmXPOmAei1nYeJYG7cPA0qpnO+6unXe2rVZTt9Xsdq7rRHuS/CTJCbDiBoU50MS0U8n5e8CTW4RdC5C5aUtFbirNMMp1QsglYSTUVB6b03BuBTrsLQqhjFCUBkuLq+c5qlKaAkLu9eSsbqziOq2BINNbQmd2dZSU8oas4YFDsj7IF9P8jpcTuswvik6/EKvFm122Fu6fq/w+kBGG8ouKR0cjWy1cedk5+UD4ik594TmBzOFldQjeWX0EsFRFm/fBMtnL7nHPWlFme/fEVm/YcyX3IA79ZaAS7Ock6SkT5aQlxuhIeyeWPgq59cU=
+reCaptcha:
+  enabled: true
+  siteKey: 6Le2eIMbAAAAADoV9HDpR31i8ZwInZoEb_91vEag
+  secret: B1rCM9UqEhUq9QMzvqr5GSs06+MVHuAsV36XvCVpqX+xpjymlJIoHsr+ShDDxCqY8h77JvHFNpAuVH/BDwpsWhYh6Gjb1k+T82u6DhRavQmKKbOBkWqFRBu0tFbAwo1pGjndO1aTt/QigDlnkAK8e2XpGSH5357tE5ng302ETwA5iy25GCL00QW5ffOADpkQSjWBAPk1mu5M5rzcqeFYgpS+QHd3prAxOnnfTCJobSBxsI0RDJ37Cm8I9WK9rAEb0pxUYFYSvXiNiQpAuyHCM7PUt3sMANhgUzRTU8bSiWsxzuiFpvicGLRq/kPuzfyrd3ZMSxZzVpliILkfa3dXaEkqRHPmE4EpeifFB1a2SzPUchGlNmXPOmAei1nYeJYG7cPA0qpnO+6unXe2rVZTt9Xsdq7rRHuS/CTJCbDiBoU50MS0U8n5e8CTW4RdC5C5aUtFbirNMMp1QsglYSTUVB6b03BuBTrsLQqhjFCUBkuLq+c5qlKaAkLu9eSsbqziOq2BINNbQmd2dZSU8oas4YFDsj7IF9P8jpcTuswvik6/EKvFm122Fu6fq/w+kBGG8ouKR0cjWy1cedk5+UD4ik594TmBzOFldQjeWX0EsFRFm/fBMtnL7nHPWlFme/fEVm/YcyX3IA79ZaAS7Ock6SkT5aQlxuhIeyeWPgq59cU=
 
 defaults:
   # Post defaults
