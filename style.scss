@@ -308,8 +308,9 @@ p > img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $base-font-family;
-  font-size: 18px;
+  font-family: "Ubuntu Mono";
+  font-weight: bold;
+  font-size: 20px;
 
   @include mobile {
     float: none;

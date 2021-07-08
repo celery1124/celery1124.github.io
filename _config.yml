@@ -3,13 +3,13 @@
 #
 
 # Name of your site (displayed in the header)
-name: Mian Qin
+name: Mian's Blog
 
 # Name of the author
 author: Mian Qin
 
 # Short bio or description (displayed in the header)
-description: Mian's Blog
+description: Architecture and system
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: /images/MQ_LOGO.jpg
@@ -30,7 +30,7 @@ navbar-links:
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
-  email: celery1124@tamu.edu
+  email: celery1124@aggienetowrk.com
   facebook:
   flickr:
   github: celery1124
@@ -40,7 +40,7 @@ footer-links:
   rss: rss
   twitter: 
   stackoverflow: 
-  youtube: # channel/<your_long_string> or user/<user-name>
+  youtube: channel/UCDty9L5MSnLoM8zzVB6u2Hw
   googleplus: # anything in your profile username that comes after plus.google.com/
   playconsole:
 
@@ -52,7 +52,6 @@ disqus:
 # Enter your Google Analytics web tracking code (e.g. UA-2110908-2) to activate tracking
 google_analytics: 
 
-# Your website URL (e.g. http://amitmerchant1990.github.io or http://www.amitmerchant.com)
 # Used for Sitemap.xml and your RSS feed
 url: http://celery1124.github.io
 enforce_ssl: https://celery1124.github.io
