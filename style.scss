@@ -308,7 +308,7 @@ p > img {
 nav {
   float: right;
   margin-top: 23px; // @TODO: Vertically middle align
-  font-family: $times;
+  font-family: $base-font-family;
   font-size: 18px;
 
   @include mobile {

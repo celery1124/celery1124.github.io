@@ -1,16 +1,23 @@
 // comment styles from
 // https://github.com/willymcallister/willymcallister.github.io/blob/fbc7f396fbe80186b1abc63e436ec509190c1b3a/assets/main.scss
 
+$comment-font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Segoe UI Symbol", "Segoe UI Emoji", "Apple Color Emoji", Roboto, Helvetica, Arial, sans-serif;
 $base-font-size:    18px !default;
 $comment-font-size: 17px !default;
-
+$base-font-weight: 400 !default;
+$small-font-size:  $base-font-size * 0.875 !default;
+$base-line-height: 1.5 !default;
+$text-color:            #111111 !default;
+$background-color:      #fdfdfd !default;
+$grey-color: #666;
+$grey-color-light: #bbb;
 
 //
 // Staticman new comment form
 //
 input, select, textarea, label, button {
 //    @extend body;
-    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $base-font-family;
+    font: $base-font-weight #{$base-font-size}/#{$base-line-height} $comment-font-family;
     color: $text-color;
     background-color: $background-color;
     -webkit-text-size-adjust: 100%;
