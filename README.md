@@ -3,7 +3,7 @@
   <img src="/images/MQ_LOGO.jpg" alt="Mian's blog" width="200"/>
   <br>  
   <p align="center">
-    <i>Support my work via <a href="paypal.me/MIANQ">Paypal</a></i>
+    <i>Support my work via <a href="https://paypal.me/MIANQ">Paypal</a></i>
   </p>
 </div>
 
