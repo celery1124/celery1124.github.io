@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Linux process address space layout
-categories: Operating-system
+categories: [Operating system]
 tags: [linux, memory, address space, operating system]
 ---
 
