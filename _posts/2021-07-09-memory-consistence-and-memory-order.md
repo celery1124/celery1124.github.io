@@ -113,3 +113,12 @@ ARM and PPC on the other hands, uses a pretty weak memory consistency model, mea
 ### RISC-V & SPARC
 
 RISC-V and SPARC provide different memory consistency models from strict (TSO) to more relaxed model, like the weak model ARM uses.
+
+
+## Reference
+
+[https://www.cs.utexas.edu/~bornholt/post/memory-models.html](https://www.cs.utexas.edu/~bornholt/post/memory-models.html)
+
+[https://www.kernel.org/doc/Documentation/memory-barriers.txt](https://www.kernel.org/doc/Documentation/memory-barriers.txt)
+
+[https://mysqlonarm.github.io/Understanding-Memory-Barrier/](https://mysqlonarm.github.io/Understanding-Memory-Barrier/)
