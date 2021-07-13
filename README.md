@@ -9,7 +9,7 @@
 
 ---
 
-This is the repository for my [blog](https://celery1124.github.io) hosted on github page. The [Jekyll](https://jekyllrb.com/)-powered theme is original forked from [Reverie](https://github.com/amitmerchant1990/reverie). (The author is Amit Merchant, his/her blog is [here](https://www.amitmerchant.com).) I made some change to the font style and integrated with a commenting system (referenced by this [blog](https://travisdowns.github.io/blog/2020/02/05/now-with-comments.html) from Travis Downs).
+This is the repository for my [blog](https://celery1124.github.io) hosted on github page. The [Jekyll](https://jekyllrb.com/)-powered theme is original forked from [Reverie](https://github.com/amitmerchant1990/reverie). (The author is Amit Merchant, his/her blog is [here](https://www.amitmerchant.com).) I made some changes to the font style and integrated with a commenting system (referenced by this [blog](https://travisdowns.github.io/blog/2020/02/05/now-with-comments.html) from Travis Downs).
 
 If you find any issue in the blog, feel free to email me or open an issue here or even submit a PR.
 
