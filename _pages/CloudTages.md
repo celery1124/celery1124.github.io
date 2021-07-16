@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Blog List With Tags
+title: Blog Archive With Tags
 permalink: /CloudTags/
 ---
 
@@ -8,7 +8,7 @@ permalink: /CloudTags/
 
 <!-- this code si from https://github.com/daattali/daattali.github.io/blob/master/index.html --> 
 <div class="list-filters post-preview" style="text-align:center;font-family:Helvetica;">
-  <a href="/" class="list-filter"> All posts </a> &nbsp;
+  <a href="/Categories" class="list-filter"> All posts </a> &nbsp;
   <a href="/CloudCategories" class="list-filter filter-selected"> Catergories </a> &nbsp;
   <a href="/CloudTags" class="list-filter"> Tags </a> &nbsp;
   <a href="/CloudDate" class="list-filter"> By Date </a> &nbsp;
