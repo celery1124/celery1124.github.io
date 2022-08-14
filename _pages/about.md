@@ -6,7 +6,7 @@ permalink: /about/
 
 ## About [Me](https://celery1124.com)
 
-I am currently a Ph.D. student in Computer Engineering Department of Texas A&M University working with Dr. [Paul V. Gratz](https://cesg.tamu.edu/faculty/paul-gratz/) and [Dr. Narasimha Reddy](https://cesg.tamu.edu/faculty/narasimha-reddy/).
+I work at VMware in the Virtual Machine Monitor team (building cutting edge hypervisor). I completed my Ph.D. in Computer Engineering Department of Texas A&M University working with Dr. [Paul V. Gratz](https://cesg.tamu.edu/faculty/paul-gratz/) and [Dr. Narasimha Reddy](https://cesg.tamu.edu/faculty/narasimha-reddy/).
 
 My research interest is SW/HW co-design and implementation of computer system with field programmable gate array (FPGA) for hybrid memory/storage system.  I also worked on several projects on top of Samsung new released [KV-SSDs](https://github.com/OpenMPDK/KVSSD).
 
